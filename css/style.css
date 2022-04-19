@@ -1,0 +1,12 @@
+table {
+    margin: 0 auto;
+}
+
+#table td {
+    padding: 0 10px;
+}
+
+.thead {
+    font-weight: bold;
+    text-transform: uppercase;
+}
