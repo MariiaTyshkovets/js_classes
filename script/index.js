@@ -165,7 +165,7 @@ class EmpTable {
                 let td = document.createElement('TD');
                 td.innerHTML = employees[i][property];
                 tr.appendChild(td);
-              }
+            }
         }
     }
 }
