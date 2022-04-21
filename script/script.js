@@ -18,40 +18,40 @@ let isPositiveNumber = (num) => {
 class Circle {
     constructor (radius) {
         if (isPositiveNumber(radius)){
-            this.radius = radius;
+            this._radius = radius;
         } else {
             console.log("The radius of circle should be positive number.") ;
         } 
     }
 
-    getRadius () {
-        return this.radius;
+    get radius () {
+        return this._radius;
     }
 
-    setRadius (number) {
-        isPositiveNumber(number) ? this.radius = number : console.log("The radius of circle should be positive number.") ;
+    set radius (number) {
+        isPositiveNumber(number) ? this._radius = number : console.log("The radius of circle should be positive number.") ;
     }
 
-    getDiameter () {
-        return this.radius*2;
+    get diameter () {
+        return this._radius*2;
     }
 
     calcAreaOfCircle () {
-        return ( Math.PI * Math.pow(this.radius, 2) ).toFixed(1);
+        return ( Math.PI * Math.pow(this._radius, 2) ).toFixed(1);
     }
 
     calcLengthOfCircle () {
-        return ( Math.PI * this.getDiameter() ).toFixed(1);
+        return ( Math.PI * this.diameter ).toFixed(1);
     }
 }
 
 let circle_1 = new Circle(-15);
-console.log(`The radius of circle is ${circle_1.getRadius()}`);
-circle_1.setRadius(10);
-console.log(`The radius of circle is ${circle_1.getRadius()}`);
-circle_1.setRadius("sf");
-console.log(`The radius of circle is ${circle_1.getRadius()}`);
-console.log(`The diameter of circle is ${circle_1.getDiameter()}`);
+console.log(`The radius of circle is ${circle_1.radius}`);
+circle_1.radius = 10;
+console.log(`The radius of circle is ${circle_1.radius}`);
+circle_1.radius = "sf";
+console.log(`The radius of circle is ${circle_1.radius}`);
+console.log(`The diameter of circle is ${circle_1.diameter}`);
 console.log(`The area of the circle is ${circle_1.calcAreaOfCircle()}`);
 console.log(`The length of the circle is ${circle_1.calcLengthOfCircle()}`);
 
